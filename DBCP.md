@@ -8,7 +8,7 @@
 
 ### Web.xml
 
-![DBCP%206f5b4c4fd6b94b9e92a549e2e3fc87a4/Untitled%201.png](DBCP%206f5b4c4fd6b94b9e92a549e2e3fc87a4/Untitled%201.png)
+![DBCP%206f5b4c4fd6b94b9e92a549e2e3fc87a4/Untitled%201.png](./img/dbcp1.png)
 
 Connection Pool은 서버에서 관리하는 자원이기 때문에 Server 파일 내의 XML 파일을 통해 관리한다. 위 사진은 어떤 DBCP를 사용할 것인지 이에 대한 cofiguration을 작성한 것이다.
 
