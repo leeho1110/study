@@ -123,7 +123,7 @@
 - *Margin-collapsing →*
     1. *두 개의 태그가 마진 공간을 공유한다고 가정했을 때 각 태그의 마진값 중 더 큰 값이 두 태그 사이의 마진값이 된다.*
 
-![%E1%84%80%E1%85%B5%E1%84%89%E1%85%AE%E1%86%AF%20Q&A%205f596ef554b34e8daa381343723de2cd/Untitled.png](%E1%84%80%E1%85%B5%E1%84%89%E1%85%AE%E1%86%AF%20Q&A%205f596ef554b34e8daa381343723de2cd/Untitled.png)
+![%E1%84%80%E1%85%B5%E1%84%89%E1%85%AE%E1%86%AF%20Q&A%205f596ef554b34e8daa381343723de2cd/Untitled.png](./img/tech1.png)
 
 *→ 두 태그의 마진이 100px 일 때, 위 태그의 마진이 100px 이상인 경우 사이는 해당 값이 되지만 100px보다 작아지는 경우 아래 태그의 마진은 100px 그대로 이기 때문에 사이는 100px로 유지된다.* 
 
@@ -141,7 +141,7 @@
 
 - JSP 내장 객체 →
 
-![%E1%84%80%E1%85%B5%E1%84%89%E1%85%AE%E1%86%AF%20Q&A%205f596ef554b34e8daa381343723de2cd/Untitled%201.png](%E1%84%80%E1%85%B5%E1%84%89%E1%85%AE%E1%86%AF%20Q&A%205f596ef554b34e8daa381343723de2cd/Untitled%201.png)
+![%E1%84%80%E1%85%B5%E1%84%89%E1%85%AE%E1%86%AF%20Q&A%205f596ef554b34e8daa381343723de2cd/Untitled%201.png](./img/tech2.png)
 
 - Context-root (?)
 - JSP Model 1, JSP Model 2 → Transaction Script, 무조건 JSP Model 2 가 좋은 것일까? 위에 말했던 Servlet, JSP 구동 방식을 이해하게 되면 JSP Model 2로 발전한 계기와 그 장점을 자연스럽게 이해할 수 있음! ~~***여기서 JSP Model 2의 디자인을 이해하지 못하면 Spring Framework를 근본적으로 이해하기 힘듦.***~~
@@ -157,7 +157,7 @@
 - Spring Java Bean → EJB, POJO, web.xml, servlet-context.xml, root-context.xml 각 XML 파일이 Spring Framework의 구동에 어떤 역할을 하는지와 무엇을 정의하는 XML 파일인지를 파악!
 - Spring Framework 동작 순서 [https://javannspring.tistory.com/231](https://javannspring.tistory.com/231)
 
-    ![%E1%84%80%E1%85%B5%E1%84%89%E1%85%AE%E1%86%AF%20Q&A%205f596ef554b34e8daa381343723de2cd/Untitled%202.png](%E1%84%80%E1%85%B5%E1%84%89%E1%85%AE%E1%86%AF%20Q&A%205f596ef554b34e8daa381343723de2cd/Untitled%202.png)
+    ![%E1%84%80%E1%85%B5%E1%84%89%E1%85%AE%E1%86%AF%20Q&A%205f596ef554b34e8daa381343723de2cd/Untitled%202.png](./img/tech3.png)
 
 - Maven → Build Tool (프로젝트 내 자원 관리를 담당), pom.xml 내의 groupId, artifactId
 - DAO, VO 란?
