@@ -4,7 +4,7 @@
 
 ### Context.xml
 
-
+![DBCP%206f5b4c4fd6b94b9e92a549e2e3fc87a4/Untitled%201.png](./img/dbcp1.png)
 
 ### Web.xml
 
