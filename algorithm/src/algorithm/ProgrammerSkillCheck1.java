@@ -1,28 +1,28 @@
 package algorithm;
 
 public class ProgrammerSkillCheck1 {
-	
-//	ÇÔ¼ö solutionÀº Á¤¼ö nÀ» ¸Å°³º¯¼ö·Î ÀÔ·Â¹Þ½À´Ï´Ù. 
-//	nÀÇ °¢ ÀÚ¸´¼ö¸¦ Å«°ÍºÎÅÍ ÀÛÀº ¼øÀ¸·Î Á¤·ÄÇÑ »õ·Î¿î Á¤¼ö¸¦ ¸®ÅÏÇØÁÖ¼¼¿ä.
-//	¿¹¸¦µé¾î nÀÌ 118372¸é 873211À» ¸®ÅÏÇÏ¸é µË´Ï´Ù.
-	
+
+//	í•¨ìˆ˜ solutionì€ ì •ìˆ˜ nì„ ë§¤ê°œë³€ìˆ˜ë¡œ ìž…ë ¥ë°›ìŠµë‹ˆë‹¤. 
+//	nì˜ ê° ìžë¦¿ìˆ˜ë¥¼ í°ê²ƒë¶€í„° ìž‘ì€ ìˆœìœ¼ë¡œ ì •ë ¬í•œ ìƒˆë¡œìš´ ì •ìˆ˜ë¥¼ ë¦¬í„´í•´ì£¼ì„¸ìš”.
+//	ì˜ˆë¥¼ë“¤ì–´ nì´ 118372ë©´ 873211ì„ ë¦¬í„´í•˜ë©´ ë©ë‹ˆë‹¤.
+
 	static class Solution {
 		String a;
 	    public long solution(long n) {
-	    	
+
 	    	a = "";
-	    		
-	        String.valueOf(n)										// String.valueOf(n) : long Å¸ÀÔÀÇ Á¤¼ö°ªÀ» StringÀ¸·Î º¯È¯
-	        	.chars()											// chars() ¸Þ¼Òµå¸¦ ÅëÇØ StringÀ» °¢°¢ÀÇ char·Î ÂÉ°³°í
-	        	.sorted().											// sorted() ¸Þ¼Òµå¸¦ ÅëÇØ ¿À¸§Â÷¼øÀ¸·Î º¯°æÇÑ´Ù.
-	        	forEach(c -> a = Character.valueOf((char) c) + a);	// º¯°æµÈ °ªÀ» ÇÏ³ª¾¿ ¿À¸¥ÂÊºÎÅÍ ºÙÇô³ÖÀ¸¸é¼­ ³»¸²Â÷¼øÀ¸·Î º¯°æÇÑ´Ù.
+
+	        String.valueOf(n)										// String.valueOf(n) : long íƒ€ìž…ì˜ ì •ìˆ˜ê°’ì„ Stringìœ¼ë¡œ ë³€í™˜
+	        	.chars()											// chars() ë©”ì†Œë“œë¥¼ í†µí•´ Stringì„ ê°ê°ì˜ charë¡œ ìª¼ê°œê³ 
+	        	.sorted().											// sorted() ë©”ì†Œë“œë¥¼ í†µí•´ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ë³€ê²½í•œë‹¤.
+	        	forEach(c -> a = Character.valueOf((char) c) + a);	// ë³€ê²½ëœ ê°’ì„ í•˜ë‚˜ì”© ì˜¤ë¥¸ìª½ë¶€í„° ë¶™í˜€ë„£ìœ¼ë©´ì„œ ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ë³€ê²½í•œë‹¤.
 	        long answer = Long.parseLong(a);
 	        return answer;
-	        
-	        // StreamÀ» ¾ó¸¶³ª Àß »ç¿ëÇÏ´ÂÁö, ÁÖ·Î ¹®ÀÚ¿­À» ¾î¶»°Ô ´Ù·ç´ÂÁö¿¡ ´ëÇØ ¾Ë ¼ö ÀÖ¾ú°í ÀÌ ¿Ü¿¡ Ãß°¡ÀûÀÎ ³»¿ëÀÌ ÀÖÀ¸¸é µû·Î ³ë¼ÇÀ¸·Î Ãß°¡ÇÒ ¿¹Á¤
+
+	        // Streamì„ ì–¼ë§ˆë‚˜ ìž˜ ì‚¬ìš©í•˜ëŠ”ì§€, ì£¼ë¡œ ë¬¸ìžì—´ì„ ì–´ë–»ê²Œ ë‹¤ë£¨ëŠ”ì§€ì— ëŒ€í•´ ì•Œ ìˆ˜ ìžˆì—ˆê³  ì´ ì™¸ì— ì¶”ê°€ì ì¸ ë‚´ìš©ì´ ìžˆìœ¼ë©´ ë”°ë¡œ ë…¸ì…˜ìœ¼ë¡œ ì¶”ê°€í•  ì˜ˆì •
 	    }
 	}
-	
+
 	public static void main(String[] args) {
 		Solution s = new Solution();
 		System.out.println(s.solution(8457213));
