@@ -6,6 +6,7 @@ import java.util.Map;
 public class Hash {
 	
 	static class Solution {
+		// https://programmers.co.kr/learn/courses/30/lessons/42576
 	    public String solution(String[] participant, String[] completion) {
 	    	
 	        Map<String, Integer> map = new HashMap<>();
