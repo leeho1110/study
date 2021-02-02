@@ -1,5 +1,6 @@
 package algorithm;
 
+import java.awt.image.SampleModel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,42 +20,37 @@ public class SelectionSort {
 	  
 	 
 	 */
-	public void searchMin(int[] numList) {
-	
-		// 최솟값 선언
-		int smallest = numList[0];
+	public int[] searchMin(int[] numList) {
 		
-		// 전체 탐색
-		for(int i=0; i<numList.length-2; i++) {
-			// 최솟값의 인덱스를 저장하기 위한 변수
-			int changed = 0;
-			// 선택 정렬의 요소를 고민해놓고 나머지 요소들을 탐색
-			for(int j=i+1; j<numList.length-1; j++) {
-				// 만약 탐색하는 요소가 최솟값보다 작다면 최솟값을 해당 값으로 변경
-				if(numList[j] < smallest) {
-					// 변경한 인덱스를 저장
-					smallest = numList[j];
-					changed = j;
+		// 전체 탐색  
+		for(int i=0; i<numList.length-1; i++) {
+			// 내부 탐색
+			for(int j=i+1; j<numList.length; j++) {
+				// 최솟값은 i번째 요소 -> 계속헤서 비교해야할 대상
+				int smallest = numList[i];
+				// 값 비교
+				if(smallest > numList[j]) {
+					// 교체
+					int temp = numList[j];
+					numList[j] = smallest;
+					numList[i] = temp;
 				}
 			}
-			// 기준 요소의 값을 바꿔치기
-			int temp = numList[i];
-			numList[i] = smallest;
-			numList[changed] = temp;
 		}
 		
-		for(int num: numList) {
-			System.out.println(num);
-		}
-	}
+		return numList;
 	
 	 
+	}
 	public static void main(String[] args) {
 		
-		int[] numList = {5,2,1,3,4};
-		
+		int[] numList = {5,7,1,3,2,4,8,6,9};
 		SelectionSort selectionSort = new SelectionSort();
-		selectionSort.searchMin(numList);
+		int[] sortedList = selectionSort.searchMin(numList);
+		
+		for(int num : sortedList) {
+			System.out.println(num);
+		}
 		
 	}
 }
