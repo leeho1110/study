@@ -20,7 +20,9 @@ public class SelectionSort {
 	  
 	 
 	 */
-	public int[] searchMin(int[] numList) {
+	
+	
+	public int[] selectionSort(int[] numList) {
 		
 		// 전체 탐색  
 		for(int i=0; i<numList.length-1; i++) {
@@ -42,11 +44,35 @@ public class SelectionSort {
 	
 	 
 	}
+	
+	public List<Integer> selectionSortByLinkedList(List<Integer> numList) {
+		
+		// 전체 탐색  
+		for(int i=0; i<numList.size()-1; i++) {
+			// 내부 탐색
+			for(int j=i+1; j<numList.size(); j++) {
+				// 최솟값은 i번째 요소 -> 계속헤서 비교해야할 대상
+				int smallest = numList.get(i);
+				// 값 비교
+				if(smallest > numList.get(j)) {
+					// 교체
+					int temp = numList.get(j);
+				}
+			}
+		}
+		
+		return numList;
+		
+		
+	}
+	
+	
+	
 	public static void main(String[] args) {
 		
 		int[] numList = {5,7,1,3,2,4,8,6,9};
 		SelectionSort selectionSort = new SelectionSort();
-		int[] sortedList = selectionSort.searchMin(numList);
+		int[] sortedList = selectionSort.selectionSort(numList);
 		
 		for(int num : sortedList) {
 			System.out.println(num);
