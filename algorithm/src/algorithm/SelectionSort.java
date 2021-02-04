@@ -2,6 +2,7 @@ package algorithm;
 
 import java.awt.image.SampleModel;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class SelectionSort {
@@ -49,32 +50,47 @@ public class SelectionSort {
 		
 		// 전체 탐색  
 		for(int i=0; i<numList.size()-1; i++) {
-			// 내부 탐색
 			for(int j=i+1; j<numList.size(); j++) {
-				// 최솟값은 i번째 요소 -> 계속헤서 비교해야할 대상
 				int smallest = numList.get(i);
-				// 값 비교
 				if(smallest > numList.get(j)) {
-					// 교체
-					int temp = numList.get(j);
+					int temp = smallest;
+					numList.set(i, numList.get(j));
+					numList.set(j,temp);
 				}
 			}
 		}
 		
+		
 		return numList;
-		
-		
 	}
 	
 	
 	
 	public static void main(String[] args) {
 		
+		// int[] 리스트의 경우
 		int[] numList = {5,7,1,3,2,4,8,6,9};
 		SelectionSort selectionSort = new SelectionSort();
 		int[] sortedList = selectionSort.selectionSort(numList);
 		
-		for(int num : sortedList) {
+//		for(int num : sortedList) {
+//			System.out.println(num);
+//		}
+		
+		// 데이터의 삽입 및 삭제에서 장점이 있는 LinkedList
+		List<Integer> numLinkedList = new LinkedList<Integer>();
+		numLinkedList.add(5);
+		numLinkedList.add(7);
+		numLinkedList.add(1);
+		numLinkedList.add(3);
+		numLinkedList.add(2);
+		numLinkedList.add(4);
+		numLinkedList.add(8);
+		numLinkedList.add(6);
+		numLinkedList.add(9);
+		
+		List<Integer> sortedLinkedList = selectionSort.selectionSortByLinkedList(numLinkedList);
+		for(int num : sortedLinkedList) {
 			System.out.println(num);
 		}
 		
