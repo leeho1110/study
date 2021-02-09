@@ -10,7 +10,6 @@ public class QuickSort {
 	
 	// 재귀로 호출되는 부분
 	private static void quickSort(int[] arr, int start, int end) {
-		
 		int part2 = partition(arr, start ,end); // 왼쪽 오른쪽으로 갈랐을 때 오른쪽의 첫번째 방
 		
 		/*    	   0       1      2        3
