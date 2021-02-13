@@ -1,5 +1,7 @@
 package algorithm;
 
+import java.util.LinkedList;
+
 public class BFS {
 
 	/*
@@ -8,6 +10,15 @@ public class BFS {
 	 	To-do : 나의 이웃 중 망고 장수를 찾기
 	 	
 	 	나의 이웃 중 망고 장수를 찾고 만약 없다면 이웃의 이웃에서 다시 찾기! 찾을 때까지 반복한다
+
+	 	사용 자료구조는 큐(First-in First-Out)
 	 	
 	 */
+	public static void search(LinkedList<String> personList) {
+		
+		for(String person : personList) {
+		}
+	}
+	
+	
 }
