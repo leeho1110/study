@@ -63,7 +63,6 @@ public class Queue<T> {
 		q.add(4);
 		
 		System.out.println(q.remove());
-		System.out.println(q.remove());
 		System.out.println(q.peek());
 		System.out.println(q.remove());
 		System.out.println(q.isEmpty());
