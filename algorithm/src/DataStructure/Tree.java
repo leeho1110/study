@@ -37,12 +37,81 @@ public class Tree {
   	- Full Binary Tree: 하나의 Childe Node를 가진 노드가 하나도 없는 트리, 만약 자식 노드를 가지려면 두개를 가지고 아니면 하나도 X
   	
   	- Perfect Binary Tree: 양쪽으로 빈 공간없이 모든 노드가 2개의 자식 노드를 가지고, 레벨도 딱 떨어지는 완벽한 피라미드 구조
-  	   
-   
-   
 	 
+	--------------------------------------------------------------------------------------------------------------------- 
 	
-	 
+	-> 이진 트리를 횡단하면서 트리의 모든 데이터를 가져오는 방법
+	   Inorder(left,root,right/왼쪽, 오른쪽 안(In)에) 
+	   Preorder(root,left,right/왼쪽,오른쪽 이전(pre==before)에 )
+	   Postorder(1eft,right,root/왼쪽,오른쪽 후(post==after)에)
+	   
+		   1
+		 2   3
+	    4 5
+	   
+	   In-order : 4 2 5 1 3
+	   Pre-order : 1 2 4 5 3
+	   Post-order : 4 5 2 3 1 
 	 
 	 */
+	class Node{
+		int data;
+		Node left;
+		Node right;
+	}
+	
+	public Node root;
+	
+	public void setRoot(Node node) {
+		this.root = node;
+	}
+	
+	public Node getRoot() {
+		return root;
+	}
+	
+	public Node makeNode(Node left, int data, Node right) {
+		Node node = new Node();
+		node.data = data;
+		node.left = left;
+		node.right = right;
+		return node;
+	}
+	
+	public void inorder(Node node) {
+		if(node != null) {
+			inorder(node.left);
+			System.out.println(node.data);
+			inorder(node.right);
+		}
+	}
+	
+	public void preorder(Node node) {
+		if(node != null) {
+			System.out.println(node.data);
+			preorder(node.left);
+			preorder(node.right);
+		}
+	}
+	
+	public void postorder(Node node) {
+		if(node != null) {
+			postorder(node.left);
+			postorder(node.right);
+			System.out.println(node.data);
+		}
+	}
+	
+	public static void main(String[] args) {
+		Tree tree = new Tree();
+		Node n4 = tree.makeNode(null, 4, null);
+		Node n5 = tree.makeNode(null, 5, null);
+		Node n2 = tree.makeNode(n4, 2, n5);
+		Node n3 = tree.makeNode(null, 3, null);
+		Node n1 = tree.makeNode(n2, 1, n3);
+		
+		tree.setRoot(n1);
+		tree.inorder(tree.getRoot());
+		
+	}
 }
