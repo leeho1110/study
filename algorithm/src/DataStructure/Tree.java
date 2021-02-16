@@ -81,14 +81,14 @@ public class Tree {
 	public void inorder(Node node) {
 		if(node != null) {
 			inorder(node.left);
-			System.out.println(node.data);
+			System.out.print(node.data + "-");
 			inorder(node.right);
 		}
 	}
 	
 	public void preorder(Node node) {
 		if(node != null) {
-			System.out.println(node.data);
+			System.out.print(node.data + "-");
 			preorder(node.left);
 			preorder(node.right);
 		}
@@ -98,7 +98,7 @@ public class Tree {
 		if(node != null) {
 			postorder(node.left);
 			postorder(node.right);
-			System.out.println(node.data);
+			System.out.print(node.data + "-");
 		}
 	}
 	
@@ -111,7 +111,13 @@ public class Tree {
 		Node n1 = tree.makeNode(n2, 1, n3);
 		
 		tree.setRoot(n1);
+		System.out.println(">> In-Order");
 		tree.inorder(tree.getRoot());
+		System.out.println("\n\n>> Pre-Order");
+		tree.preorder(tree.getRoot());
+		System.out.println("\n\n>> Post-Order");
+		tree.postorder(tree.getRoot());
+		
 		
 	}
 }
