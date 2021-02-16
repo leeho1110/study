@@ -13,11 +13,22 @@ public class BFS {
 
 	 	사용 자료구조는 큐(First-in First-Out)
 	 	
+	   0
+	  /
+	 1 - 3     
+	 | / | \  
+	 2 - 4  5 - 7
+	 		 \ 6 - 8
+	 							   7
+	 |   |  |   |  |   |  | 5 |  | 6 |  | 6 |  | 8 |  |   |  |   |  |   |
+	 |   |  |   |  | 3 |  | 4 |  | 4 |  | 4 |  | 4 |  | 4 |  |   |  |   |
+	 |_0_|  |_1_|  |_2_|  |_2_|  |_2_|  |_2_|  |_2_|  |_2_|  |_2_|  |_ _|
+	 
+	   0  ->  1  ->  3  ->  5  ->  7  ->  6  ->  8  ->  4  ->  2
+	   
 	 */
 	public static void search(LinkedList<String> personList) {
 		
-		for(String person : personList) {
-		}
 	}
 	
 	
