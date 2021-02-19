@@ -50,6 +50,7 @@ class Graph {
 		root.marked = true;
 		while (!stack.isEmpty()) {
 			Node r = stack.pop();
+			
 			for (Node n : r.adjacent) {
 				if (n.marked == false) {
 					n.marked = true;
