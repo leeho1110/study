@@ -1,29 +1,83 @@
 package algorithm;
 
+import java.util.Scanner;
+
 public class Dijkstra {
-	
-	static int number = 6;
-	static int INF = 100000000;
-	
-	// 방문 여부 체크
-	static boolean[] visited = new boolean[6];
-	// 최단거리
-	static int[] distance = new int[6];
-	
-	static int getSmallIndex() {
-		int min = INF;
-		int index = 0;
-		for(int i=0; i<number; i++) {
-			if(distance[i] < min && !visited[i]) {
-				min = distance[i];
-				index = i;
+
+	/*
+	 * 방향이 있는 그래프에서 꼭지점들을 연결하는 비용이 할당 되었을 때 임의의 꼭지점에서 다른 꼭지점으로 가는 경로들 중에서 비용이 가장 적게
+	 * 드는 경로, 즉 두 정점 사이의 최단 경로를 찾아라. 입력 값 첫번째 라인에는 전체 테스트 케이스의 개수가 입력된다. 두번째 라인에는
+	 * 정점의 개수, 그리고 시작 정점, 도착 정점이 입력된다. 이때, 정점의 최대 개수는 100이다. 세번째 라인에는 정점을 잇는 간선
+	 * 개수(m)가 입력된다. 네번째 라인부터는 연결 된 정점 값 2개와 간선에 할당 된 비용이 m번 들어온다. 이때 간선 방향은 첫번째 입력된
+	 * 정점에서 두번째 입력된 정점으로 가는 방향이다.
+	 * 
+	 */
+
+	static final int N = 100;
+	static final int INF = 100000;
+	static int[][] map = new int[N + 1][N + 1];
+	static boolean[] visit = new boolean[N + 1];
+	static int[] dist = new int[N + 1];
+	static int vertex;
+	static int edge;
+	static int start;
+	static int end;
+
+	public static void dijkstra() {
+		int v = 0;
+		dist[start] = 0;
+		for (int i = 1; i <= vertex; i++) {
+			int min = INF;
+			for (int j = 1; j <= vertex; j++) {
+				if (visit[j] == false && min > dist[j]) {
+					min = dist[j];
+					v = j;
+				}
+			}
+
+			visit[v] = true;
+
+			for (int j = 1; j <= vertex; j++) {
+				if (dist[j] > dist[v] + map[v][j]) {
+					dist[j] = dist[v] + map[v][j];
+				}
 			}
 		}
-		return index;
 	}
-	
+
 	public static void main(String[] args) {
-		
-		
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for (int test_case = 1; test_case <= T; test_case++) {
+			vertex = sc.nextInt();
+			start = sc.nextInt();
+			end = sc.nextInt();
+			edge = sc.nextInt();
+
+			for (int i = 1; i <= vertex; i++) {
+				for (int j = 1; j <= vertex; j++) {
+					if (i != j) {
+						map[i][j] = INF;
+					}
+				}
+			}
+
+			for (int i = 1; i <= edge; i++) {
+				int from = sc.nextInt();
+				int to = sc.nextInt();
+				int value = sc.nextInt();
+				map[from][to] = value;
+			}
+
+			for (int i = 1; i <= vertex; i++) {
+				dist[i] = INF;
+				visit[i] = false;
+			}
+
+			dijkstra();
+			System.out.printf("#%d %d\n", test_case, dist[end]);
+		}
+		sc.close();
+
 	}
 }
