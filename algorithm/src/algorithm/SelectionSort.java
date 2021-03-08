@@ -28,18 +28,21 @@ public class SelectionSort {
 		// 전체 탐색  
 		for(int i=0; i<numList.length-1; i++) {
 			// 내부 탐색
+			int smallest = numList[i];
+			int idx = i;
+			
 			for(int j=i+1; j<numList.length; j++) {
-				// 최솟값은 i번째 요소 -> 계속헤서 비교해야할 대상
-				int smallest = numList[i];
-				// 값 비교
-				if(smallest > numList[j]) {
-					// 교체
-					int temp = numList[j];
-					numList[j] = smallest;
-					numList[i] = temp;
+				if( smallest > numList[j] ) {
+					smallest = numList[j];
+					idx = j;
 				}
 			}
+			
+			int temp = numList[i];
+			numList[i] = smallest;
+			numList[idx] = temp;
 		}
+
 		
 		return numList;
 	
@@ -73,26 +76,26 @@ public class SelectionSort {
 		SelectionSort selectionSort = new SelectionSort();
 		int[] sortedList = selectionSort.selectionSort(numList);
 		
-//		for(int num : sortedList) {
-//			System.out.println(num);
-//		}
-		
-		// 데이터의 삽입 및 삭제에서 장점이 있는 LinkedList
-		List<Integer> numLinkedList = new LinkedList<Integer>();
-		numLinkedList.add(5);
-		numLinkedList.add(7);
-		numLinkedList.add(1);
-		numLinkedList.add(3);
-		numLinkedList.add(2);
-		numLinkedList.add(4);
-		numLinkedList.add(8);
-		numLinkedList.add(6);
-		numLinkedList.add(9);
-		
-		List<Integer> sortedLinkedList = selectionSort.selectionSortByLinkedList(numLinkedList);
-		for(int num : sortedLinkedList) {
+		for(int num : sortedList) {
 			System.out.println(num);
 		}
+		
+		// 데이터의 삽입 및 삭제에서 장점이 있는 LinkedList
+//		List<Integer> numLinkedList = new LinkedList<Integer>();
+//		numLinkedList.add(5);
+//		numLinkedList.add(7);
+//		numLinkedList.add(1);
+//		numLinkedList.add(3);
+//		numLinkedList.add(2);
+//		numLinkedList.add(4);
+//		numLinkedList.add(8);
+//		numLinkedList.add(6);
+//		numLinkedList.add(9);
+//		
+//		List<Integer> sortedLinkedList = selectionSort.selectionSortByLinkedList(numLinkedList);
+//		for(int num : sortedLinkedList) {
+//			System.out.println(num);
+//		}
 		
 	}
 }
