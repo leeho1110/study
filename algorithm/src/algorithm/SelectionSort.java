@@ -25,11 +25,10 @@ public class SelectionSort {
 	
 	public int[] selectionSort(int[] numList) {
 		
-		// 전체 탐색  
 		for(int i=0; i<numList.length-1; i++) {
-			// 내부 탐색
-			int smallest = numList[i];
-			int idx = i;
+			
+			int smallest = numList[i]; 	// 최소값
+			int idx = i;				// 최소값의 인덱스
 			
 			for(int j=i+1; j<numList.length; j++) {
 				if( smallest > numList[j] ) {
@@ -42,11 +41,7 @@ public class SelectionSort {
 			numList[i] = smallest;
 			numList[idx] = temp;
 		}
-
-		
 		return numList;
-	
-	 
 	}
 	
 	public List<Integer> selectionSortByLinkedList(List<Integer> numList) {
@@ -62,8 +57,6 @@ public class SelectionSort {
 				}
 			}
 		}
-		
-		
 		return numList;
 	}
 	
