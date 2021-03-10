@@ -69,6 +69,7 @@ public class SelectionSort {
 		SelectionSort selectionSort = new SelectionSort();
 		int[] sortedList = selectionSort.selectionSort(numList);
 		
+		// int[] 선택 정렬 
 		for(int num : sortedList) {
 			System.out.println(num);
 		}
