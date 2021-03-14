@@ -11,7 +11,6 @@ public class Recursion {
 		}
 	}
 
-	
 	public static void main(String[] args) {
 		Recursion recursion = new Recursion();
 		int total = recursion.factorial(3);
