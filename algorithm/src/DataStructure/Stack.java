@@ -15,6 +15,7 @@ public class Stack<T> {
 	 */
 
 	// 스택의 구성요소가 되는 노드
+	
 	private Node<T> top;
 	
 	class Node<T> {
