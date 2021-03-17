@@ -32,7 +32,6 @@ public class Queue<T> {
 		if(first == null) {
 			throw new NoSuchElementException();
 		}
-
 		 T data = first.data;
 		 first = first.next;
 		 
