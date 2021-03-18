@@ -10,7 +10,6 @@ public class Recursion {
 			return i * factorial(i - 1);
 		}
 	}
-
 	public static void main(String[] args) {
 		Recursion recursion = new Recursion();
 		int total = recursion.factorial(3);
