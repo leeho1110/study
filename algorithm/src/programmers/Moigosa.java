@@ -1,8 +1,10 @@
 package programmers;
 
+import java.util.Arrays;
+
 public class Moigosa {
 
-	static int solution(int[] answers) {
+	static int[] solution(int[] answers) {
 		
 		int[] supo1 = {1,2,3,4,5};
 		int[] supo2 = {2,1,2,3,2,4,2,5};
@@ -10,15 +12,11 @@ public class Moigosa {
 		
 		int cnt=0;
 		
-		int cnt1 = getAnswerCnt(supo1,answers);
-		int cnt2 = getAnswerCnt(supo2,answers);
-		int cnt3 = getAnswerCnt(supo3,answers);
 		
-		System.out.println(cnt1);
-		System.out.println(cnt2);
-		System.out.println(cnt3);
+		int[] answer = {getAnswerCnt(supo1,answers), getAnswerCnt(supo2,answers), getAnswerCnt(supo3,answers)};
+		Arrays.sort(answer);
 		
-		return cnt;
+		return answer;
 		
 	}
 	
@@ -38,6 +36,8 @@ public class Moigosa {
 		
 		int[] answers = {1,1,2,3,1,4,1,2,3,4,5};
 		
-		System.out.println(solution(answers));
+		for(int a : solution(answers)) {
+			System.out.print(a + " ");
+		}
 	}
 }
