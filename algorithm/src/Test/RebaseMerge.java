@@ -5,4 +5,5 @@ public class RebaseMerge {
 	// Rebase+Merge2
 	
 	// master
+	// master commit after feature commit
 }
