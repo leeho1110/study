@@ -29,7 +29,7 @@ public class LottoTopOrDown {
 			rank = 6;
 		}
 		
-		int[] answer = {rank-zeroCnt,rank};
+		int[] answer = {rank-zeroCnt,rank+zeroCnt};
 		
         return answer;
 	}
