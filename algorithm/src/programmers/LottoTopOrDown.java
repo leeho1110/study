@@ -4,34 +4,31 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// https://programmers.co.kr/learn/courses/30/lessons/77484
 public class LottoTopOrDown {
 
 	static int[] solution(int[] lottos, int[] win_nums) {
 		
-		int rank = 7;
-		int zeroCnt = 0;
-
-		List<Integer> win_nums_list = new ArrayList<Integer>();
-		for(int i : win_nums) {
-			win_nums_list.add(i);
-		}
+		int match = 0;
+		int zero = 0;
 		
-		// 입력받은 번호를 돌며
-		for(int i : lottos) {
-			if(win_nums_list.contains(i)) {
-				rank--;
-			} else if (i==0) {
-				zeroCnt++;
-			} 
-		}
-		
-		if(rank >= 6) {
-			rank = 6;
-		}
-		
-		int[] answer = {rank-zeroCnt,rank+zeroCnt};
-		
-        return answer;
+		 for (int l : lottos) {
+	            if (l == 0) zero++;
+	            else {
+	                for (int w : win_nums) {
+	                    if (l == w) {
+	                        match++;
+	                        break;
+	                    }
+	                }
+	            }
+	        }
+	        
+	        int min = match;
+	        int max = match + zero;
+	        
+	        int[] answer = {Math.min(7 - max, 6), Math.min(7 - min, 6)};
+	        return answer;
 	}
 	
 	public static void main(String[] args) {
