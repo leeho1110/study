@@ -11,11 +11,11 @@ public class PressKeypad {
 		String answer = "";
 		
 		for(int number :  numbers) {
-			if(number % 3 == 1) {
+			if(number == 1 || number == 4 || number == 7) {
 				answer += "L";
 				// 손가락 위치 갱신
 				leftIndex = number; 
-			} else if(number % 3 == 0) {
+			} else if(number == 3 || number == 6 || number == 9) {
 				answer += "R";
 				// 손가락 위치 갱신
 				rightIndex = number;
@@ -42,7 +42,7 @@ public class PressKeypad {
 						rightIndex = number;
 					} else {
 						answer += "L";
-						leftIndex = number;
+						leftIndex = number; 
 					}
 				}
 			}
@@ -71,7 +71,7 @@ public class PressKeypad {
 	
 	public static void main(String[] args) {
 		
-		int[] numbers = {1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5};
+		int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
 		String hand = "right";
 		
 		System.out.println(solution(numbers, hand));
