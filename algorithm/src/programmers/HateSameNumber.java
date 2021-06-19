@@ -31,18 +31,6 @@ public class HateSameNumber {
 		return answer;
 	}
 	
-	// stream 객체를 활용한 문제풀이
-	static int[] solution2(int[] arr) {
-		
-		Arrays.asList(arr).forEach(action);
-		
-		int[] answer = {};
-		
-		
-		return answer;
-	}
-	
-	
 	public static void main(String[] args) {
 		
 		int[] arr = {1,1,1,1,5,2,2,2,3,0,7,7,7,8,8};
