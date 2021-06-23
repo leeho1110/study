@@ -1,11 +1,8 @@
 package programmers;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.stream.Collectors;
 
 public class FailPercent {
 	
@@ -29,13 +26,19 @@ public class FailPercent {
 			answerList.put(i,1-(success.get(i)/(float)challange.get(i)));
 		}
 		
-		List<Map.Entry<Integer, Float>> entries = 
-				answerList.entrySet().stream()
-		        .sorted(Map.Entry.comparingByValue())
-		        .collect(Collectors.toList());
-		
-		System.out.println(entries);
 		int[] answer = new int[N];
+		for(int i=1; i<=N; i++) {
+            float max = -1;
+            int maxKey = 0;
+            for(Integer key : answerList.keySet()) {
+                if(max < answerList.get(key)) {
+                    max = answerList.get(key);
+                    maxKey = key;
+                }
+            }
+            answer[i-1] = maxKey;
+            answerList.remove(maxKey);
+        }
 		
         return answer;
 	}
