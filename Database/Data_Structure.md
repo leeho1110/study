@@ -39,7 +39,6 @@
 - 오라클 블록의 크기는 db_block_size라는 파라미터에 의해 정해지며 변경이 불가능하다.
 - 다른 블록사이즈를 사용하고자 한다면 테이블스페이스를 추가로 생성하면서 다른 크기로 설정 가능하다.
 - Block Header, Free Space, Row Data 세가지로 이루어진다. 
-	![DataBlock](https://github.com/leeho1110/TIL/raw/master/img/oracleBlock.png)
 	1. Block Header : Top-Down 방식으로 Header 정보가 증가하며, Bottom-Top 방식으로 데이터가 증가한다. 
 		- Block Address : 데이터가 테이터 파일의 몇 번째 블록에 있는지 알려주는 주소값
 		- Data Block Address : 테이블 스페이스 내에서 몇번째 블록에 있는지 알려주는 주소값
@@ -47,3 +46,4 @@
 		- Row Directory : 해당 데이트 블록 내 Row들의 주소값
 		- Table Directory : 해당 데이터 블록의 Segment 정보
 		- Transaction Slots : 해당 데이터 블록에 존재하는 Row에 대해 DML을 수행하기 위해 획득해야하는 요소
+	![DataBlock](https://github.com/leeho1110/TIL/raw/master/img/oracleBlock.png)
