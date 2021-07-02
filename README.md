@@ -28,3 +28,4 @@
 ### Database
 
 * [Primary Key, Unique Index](https://github.com/leeho1110/TIL/blob/master/Database/Primary_Key_Unique_Index.md)
+* [Oracle DB : Basic Data Structure](https://github.com/leeho1110/TIL/blob/master/Database/Data_Structure.md)
