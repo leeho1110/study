@@ -27,4 +27,4 @@
 
 ### Database
 
-* Primary Key, Unique Index
+* [Primary Key, Unique Index](https://github.com/leeho1110/TIL/blob/master/Database/Primary_Key_Unique_Index.md)
