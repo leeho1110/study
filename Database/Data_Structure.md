@@ -1,4 +1,4 @@
-# Segment
+# Oracle Database : Basic Data Structure
 
 날짜: 2021년 7월 1일
 
