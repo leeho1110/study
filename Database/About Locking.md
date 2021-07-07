@@ -27,6 +27,11 @@ Lock은 트랜잭션 처리의 순차성을 보장하기 위해 등장했습니�
 이런 Lock 간 경합이 발생하여 `Transaction` 이 작업을 진행시키지 못하고 대기하는 상태를 **Blocking** 이라고 합니다. 이를 해소하기 위해선 먼저 작업을 진행하고있는 `Transaction-1` 이 `COMMIT` 혹은 `ROLLBACK` 되어야 합니다. 하지만 만약 뒤에 밀려있는 트랜잭션이 수백개라면? 이런 경합은 성능에 치명적인 영향을 끼치게 됩니다. 따라서 경합을 최소화할 수 있도록 설계 단계에서 주의해야 합니다. 
 
 
+### DeadLock
+그런데 만약 Blocking이 두 개의 resource에 대해서 동시에 발생한다면 어떻게 될까요. 예시를 통해 설명해보겠습니다.
+
+우선 자료 검색을 진행하다보면 Dead Lock에 빠질 수 있는 조건들과 여러가지들이 나옵니다. 다만 지금은 Dead Lock이 무엇인지부터 이해하도록 하겠습니다.
+
 <br><br>
 ---
 
@@ -34,3 +39,4 @@ Lock은 트랜잭션 처리의 순차성을 보장하기 위해 등장했습니�
 
 - [https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=parkjy76&logNo=220015135826](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=parkjy76&logNo=220015135826)
 - [https://suhwan.dev/2019/06/09/transaction-isolation-level-and-lock/](https://suhwan.dev/2019/06/09/transaction-isolation-level-and-lock/)
+- [https://myjamong.tistory.com/181](https://myjamong.tistory.com/181)
