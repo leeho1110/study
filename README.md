@@ -29,3 +29,5 @@
 
 * [Primary Key, Unique Index](https://github.com/leeho1110/TIL/blob/master/Database/Primary_Key_Unique_Index.md)
 * [Oracle DB : Basic Data Structure](https://github.com/leeho1110/TIL/blob/master/Database/Data_Structure.md)
+* [Locking](https://github.com/leeho1110/TIL/blob/master/Database/About%20Locking.md)
+* [Transaction Isolation Level](https://github.com/leeho1110/TIL/blob/master/Database/Transaction%20Isolation%20Level.md)
