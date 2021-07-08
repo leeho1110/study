@@ -32,6 +32,31 @@ Lock은 트랜잭션 처리의 순차성을 보장하기 위해 등장했습니�
 
 우선 자료 검색을 진행하다보면 Dead Lock에 빠질 수 있는 조건들과 여러가지들이 나옵니다. 다만 지금은 Dead Lock이 무엇인지부터 이해하도록 하겠습니다.
 
+먼저 Lock이 어떻게 걸리는지부터 UPDATE 쿼리를 예시로 확인해보겠습니다.
+```
+UPDATE EMPLOYEES
+SET SALARY = 3000
+WHERE EMPLOYEE_ID = 201;
+```
+![https://github.com/leeho1110/TIL/raw/master/img/deadlock.png](https://github.com/leeho1110/TIL/raw/master/img/deadlock.png)
+
+위 쿼리가 실행될 때에는 총 4가지를 거쳐 진행됩니다.
+
+1. `UPDATE` 를 실행하고자 하는 행 `LOCK`
+2. 타 트랜잭션이 조회할 경우를 대비하여 `UNDO SEGMENT` 에 기존 데이터 기록
+3. 데이터 `UPDATE` 
+4. `COMMIT` 후 `UNLOCK`
+
+그렇다면 `DEAD LOCK`은 어떻게 발생하는지 위 예시를 통해서 설명해보겠습니다. 트랜잭션 두개와 수정이 일어날 두개의 ROW를 각각 `T1,T2` / `R1,R2` 이라고 부르겠습니다.
+
+1. `T1` 은 `UPDATE` 작업을 위해 `EMPLOYEES` 테이블 `R1`에 `LOCK`을 걸어두었습니다. 그리고 이 작업 이후 `R2`에 대해서 작업을 진행한 후 `COMMIT` 을 하려합니다.
+2. 이와 동시에 `T2` 는 `R2` 에 `UPDATE` 작업을 진행하고, 이어서 `R1` 에 작업을 추가로 이어서 하려합니다. 
+
+이 상태에서 `T1` 은 `R1`에 대한 `LOCK`, `T2`는 `R2`에 대한 `LOCK`을 갖고 있습니다. 그리고 이 둘은 서로가 LOCK을 가지고 있는 ROW에 대해서 LOCK을 요청하죠. 
+
+서로 다음 작업이 진행이 되어야 `COMMIT` 을 완료하고 `LOCK`이 해제되지만, 이 둘은 서로 `LOCK`이 걸려있는 상태에 서로에게 `LOCK`을 요청하고 있으니 영원히 `COMMIT` 이 일어나지 않겠죠. 이런 경우를 바로 `DEAD LOCK`이라고 합니다.
+
+
 <br><br>
 ---
 
