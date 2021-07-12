@@ -1,24 +1,41 @@
 package programmers;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Moigosa {
 
 	static int[] solution(int[] answers) {
 		
 		// 총 3명의 수포자가 존재하며 각 수포자는 아래의 배열처럼 정답을 찍는다.
-		int[] supo1 = {1,2,3,4,5};
+ 		int[] supo1 = {1,2,3,4,5};
 		int[] supo2 = {2,1,2,3,2,4,2,5};
 		int[] supo3 = {3,3,1,1,2,2,4,4,5,5};
 		
 		// 정답 배열에는 수포 리스트에서  정답을 맞춘 갯수를 추출하는 getAnswerCnt 를 각 수포자마다 돌림
-		int[] answer = {getAnswerCnt(supo1,answers), getAnswerCnt(supo2,answers), getAnswerCnt(supo3,answers)};
-		
+ 		int[] supoAnswer = {getAnswerCnt(supo1,answers), getAnswerCnt(supo2,answers), getAnswerCnt(supo3,answers)};
 		// 정답 값을 정렬 후 반환
-		Arrays.sort(answer);
+ 		
+ 		int largest = -1;
+ 		List<Integer> idxList = new ArrayList<Integer>();
+ 		
+ 		for(int i=0; i<supoAnswer.length; i++) {
+ 			int answer = supoAnswer[i];
+ 			if(answer >= largest) {
+ 				largest = answer;
+ 				idxList.add(i+1);
+ 			} 
+ 		}
 		
-		return answer;
-		
+ 		int[] answerList = new int[idxList.size()];
+ 		int idx = 0;
+ 		for(int supo : idxList) {
+ 			answerList[idx] = supo;
+ 			idx++;
+ 		}
+ 		
+ 		
+		return answerList;
 	}
 	
 	// 들어온 리스트와 answer를 비교
@@ -33,16 +50,16 @@ public class Moigosa {
 			}
 		}
 		
-		return cnt;
+ 		return cnt; 
 		
 	}
 
 	public static void main(String[] args) {
 		
-		int[] answers = {1,1,2,3,1,4,1,2,3,4,5};
+		int[] answers = {1,2,3,4,5};
+		for(int i : solution(answers)) {
+			System.out.println(i);
+		};
 		
-		for(int a : solution(answers)) {
-			System.out.print(a + " ");
-		}
 	}
 }
