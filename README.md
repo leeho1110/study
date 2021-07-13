@@ -35,5 +35,5 @@
 ### Git
 * [Git Branch strategy](https://github.com/leeho1110/TIL/blob/master/git/Git%20branch%20strategy.md)
 
-### book Review
+### book Report
 * [Clean Code - Robert C. Martin](https://github.com/leeho1110/TIL/tree/master/bookReport/Clean%20Code%20-%20Robert%20C.%20Martin)
