@@ -1,7 +1,5 @@
 # Clean Code - Robert C. Martin
 
-날짜: 2021년 7월 12일
-
 ### PART 2 : 의미 있는 이름
 
 1. 의도를 분명히 밝혀라
