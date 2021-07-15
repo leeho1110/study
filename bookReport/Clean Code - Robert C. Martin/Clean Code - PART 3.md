@@ -43,3 +43,17 @@
             ```
 
             Session.initialize() 를 수행하는 것은 만약 `checkPassword()` 라는 메소드의 이름만 보고 호출했다면 `Session` 이 초기화되는 부수 효과가 발생한다. 이런 일이 없도록 ***하나의 함수는 한 가지의 일*** 만 해라.
+
+6. 명령과 조회를 분리하라
+    1. 함수는 뭔가를 수행하거나 답하거나 둘 중 하나만 해야 한다.
+    2. 객체 상태를 변경하거나, 객체 정보를 반환하거나 둘 중 하나다.
+
+          ```java
+          public boolean set(String attribute, String value)
+          ```
+          위 함수가 만약 아래처럼 들어간다면 value 값을 attribute에 단순히 set하는지, set을 성공한다면 조건문을 수행하는지 모호하다.
+          ```java
+          if(set("username","unclebob"))
+          ```
+
+          명령과 조회는 혼란을 야기하기 때문에 꼭 분리해야 한다.
